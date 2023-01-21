@@ -7,10 +7,13 @@ function onLogSubmit(event) {
   const mail = logFormElements.email.value;
   const password = logFormElements.password.value;
 
-  const elementsData = {
-    mail,
-    password,
-  };
-  event.currentTarget.reset();
-  console.log(elementsData);
+  if (!mail || !password) {
+    alert('All inputs must not be empty');
+  }
+  else {
+    const elementsData = { mail, password };
+    console.log(elementsData);
+    logForm.reset();
+  }
 }
+
